@@ -1,0 +1,53 @@
+.hand {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.hour {
+  width: 105px;
+  height: 105px;
+  transform: rotate(90deg);
+}
+
+.hour::before {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-400);
+  width: 0.25rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.minute {
+  width: 136px;
+  height: 136px;
+  transform: rotate(180deg);
+}
+
+.minute::before {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-500);
+  width: 0.25rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  z-index: 2;
+}
+
+.second {
+  width: 130px;
+  height: 130px;
+  transform: rotate(-90deg);
+}
+
+.second::before {
+  content: "";
+  position: absolute;
+  background-color: var(--gray-200);
+  width: 0.125rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  z-index: 3;
+}

@@ -1,0 +1,8 @@
+.clock-center-circle {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid rgb(229, 243, 245);
+  background-color: var(--gray-200);
+  z-index: 10;
+}
