@@ -1,0 +1,16 @@
+.tooltip {
+  position: fixed;
+  width: 180px;
+  height: 40px;
+  background-color: var(--gray-200);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+}
+
+.tooltip span {
+  color: var(--white);
+  font-size: 20px;
+}
