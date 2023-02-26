@@ -1,0 +1,12 @@
+.clock-face {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 10px solid var(--white);
+  box-shadow: 6px 6px 16px var(--primary-300),
+    inset 6px 6px 16px var(--primary-300);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
