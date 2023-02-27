@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import "./App.css";
 import Dial from "./components/Dial/index.business";
 import ToolTip from "./components/ToolTip";
@@ -9,15 +9,15 @@ function App() {
   const tooptipRef = useRef();
   const [isMouseOver, setIsMouseOver] = useState(false);
 
-  const handleMouseEnterOnClock = () => {
+  const handleMouseEnterOnClock = useCallback(() => {
     setIsMouseOver(true);
-  };
+  }, []);
 
-  const handleMouseLeaveOnClock = () => {
+  const handleMouseLeaveOnClock = useCallback(() => {
     setIsMouseOver(false);
-  };
+  }, []);
 
-  const handleMouseMoveOnClock = (e) => {
+  const handleMouseMoveOnClock = useCallback((e) => {
     const { clientX, clientY } = e;
 
     requestAnimationFrame(() => {
@@ -26,7 +26,7 @@ function App() {
         tooptipRef.current.style.top = `${clientY - 30}px`;
       }
     });
-  };
+  }, []);
 
   return (
     <div className="App">
