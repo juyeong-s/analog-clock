@@ -11,33 +11,9 @@ div[class^="index_"] {
   transform: translateX(-50%) rotate(90deg);
 }
 
-.index_one {
-  top: 16.5%;
-  left: 65.5%;
-  transform: rotateZ(120deg);
-}
-
-.index_two {
-  top: 30.5%;
-  left: 80%;
-  transform: rotateZ(150deg);
-}
-
 .index_three {
   top: 50%;
   right: 0.75rem;
-}
-
-.index_four {
-  bottom: 30%;
-  left: 80%;
-  transform: rotateZ(210deg);
-}
-
-.index_five {
-  bottom: 16.5%;
-  right: 26%;
-  transform: rotateZ(240deg);
 }
 
 .index_six {
@@ -46,31 +22,7 @@ div[class^="index_"] {
   transform: translateX(-50%) rotate(90deg);
 }
 
-.index_seven {
-  bottom: 16.5%;
-  left: 25.5%;
-  transform: rotateZ(300deg);
-}
-
-.index_eight {
-  bottom: 30.5%;
-  left: 11.5%;
-  transform: rotateZ(330deg);
-}
-
 .index_nine {
   top: 50%;
   left: 0.75rem;
-}
-
-.index_ten {
-  top: 30%;
-  left: 12.5%;
-  transform: rotateZ(390deg);
-}
-
-.index_eleven {
-  top: 16.5%;
-  left: 26.5%;
-  transform: rotateZ(420deg);
 }

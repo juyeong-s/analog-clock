@@ -1,7 +1,6 @@
 import "./index.css";
 
-function Index(props) {
-  const { num } = props;
+function Index({ num }) {
   return <div className={"index_" + num}></div>;
 }
 export default Index;
