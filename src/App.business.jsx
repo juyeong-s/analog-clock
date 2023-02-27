@@ -1,9 +1,5 @@
 import { useCallback, useRef, useState } from "react";
-import "./App.css";
-import Dial from "./components/Dial/index.business";
-import ToolTip from "./components/ToolTip";
-import "./styles/color.css";
-import "./styles/reset.css";
+import AppView from "./App.view";
 
 function App() {
   const tooptipRef = useRef();
@@ -29,16 +25,15 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {isMouseOver && <ToolTip ref={tooptipRef} />}
-      <Dial
-        {...{
-          handleMouseEnterOnClock,
-          handleMouseLeaveOnClock,
-          handleMouseMoveOnClock,
-        }}
-      />
-    </div>
+    <AppView
+      {...{
+        isMouseOver,
+        tooptipRef,
+        handleMouseEnterOnClock,
+        handleMouseLeaveOnClock,
+        handleMouseMoveOnClock,
+      }}
+    />
   );
 }
 
