@@ -1,12 +1,43 @@
+import { useRef, useState } from "react";
 import "./App.css";
-import ClockFace from "./components/ClockFace";
+import Dial from "./components/Dial/index.business";
+import ToolTip from "./components/ToolTip";
 import "./styles/color.css";
 import "./styles/reset.css";
 
 function App() {
+  const tooptipRef = useRef();
+  const [isMouseOver, setIsMouseOver] = useState(false);
+
+  const handleMouseEnterOnClock = () => {
+    setIsMouseOver(true);
+  };
+
+  const handleMouseLeaveOnClock = () => {
+    setIsMouseOver(false);
+  };
+
+  const handleMouseMoveOnClock = (e) => {
+    const { clientX, clientY } = e;
+
+    requestAnimationFrame(() => {
+      if (tooptipRef.current) {
+        tooptipRef.current.style.left = `${clientX + 5}px`;
+        tooptipRef.current.style.top = `${clientY - 30}px`;
+      }
+    });
+  };
+
   return (
     <div className="App">
-      <ClockFace />
+      {isMouseOver && <ToolTip ref={tooptipRef} />}
+      <Dial
+        {...{
+          handleMouseEnterOnClock,
+          handleMouseLeaveOnClock,
+          handleMouseMoveOnClock,
+        }}
+      />
     </div>
   );
 }
