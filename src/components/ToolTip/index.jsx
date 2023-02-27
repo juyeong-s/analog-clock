@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import { hourAtom, minuteAtom, secondAtom } from "../../state";
 import "./index.css";
 
-const ToolTip = forwardRef((props, ref) => {
+const ToolTip = forwardRef((_, ref) => {
   const [hour] = useAtom(hourAtom);
   const [minute] = useAtom(minuteAtom);
   const [second] = useAtom(secondAtom);

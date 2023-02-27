@@ -1,8 +1,13 @@
-import { forwardRef } from "react";
+import { memo } from "react";
 import "./index.css";
 
-const Hand = forwardRef((props, ref) => {
-  const { type } = props;
-  return <div className={`hand ${type}`} ref={ref}></div>;
-});
-export default Hand;
+function Hand({ type, deg }) {
+  return (
+    <div
+      className={`hand ${type}`}
+      style={{ transform: `rotate(${deg}deg)` }}
+    ></div>
+  );
+}
+
+export default memo(Hand);
