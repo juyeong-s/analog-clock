@@ -13,7 +13,7 @@
 .hour::before {
   content: "";
   position: absolute;
-  background-color: var(--primary-400);
+  background-color: var(--primary-300);
   width: 0.25rem;
   height: 3rem;
   border-radius: 0.75rem;
@@ -29,7 +29,7 @@
 .minute::before {
   content: "";
   position: absolute;
-  background-color: var(--primary-500);
+  background-color: var(--primary-400);
   width: 0.25rem;
   height: 4rem;
   border-radius: 0.75rem;
