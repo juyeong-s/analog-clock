@@ -1,5 +1,5 @@
-.tooltip {
-  position: fixed;
+.tool-tip {
+  position: absolute;
   width: 180px;
   height: 40px;
   background-color: var(--gray-200);
@@ -8,9 +8,13 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.tooltip span {
+.tool-tip span {
   color: var(--white);
   font-size: 20px;
 }

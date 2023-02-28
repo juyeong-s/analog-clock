@@ -1,7 +1,7 @@
 .dial {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   border: 10px solid var(--white);
   box-shadow: 6px 6px 16px var(--primary-200),
@@ -9,4 +9,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }

@@ -3,6 +3,7 @@ div[class^="index_"] {
   width: 1rem;
   height: 1px;
   background-color: var(--gray-200);
+  z-index: 1;
 }
 
 .index_twelve {

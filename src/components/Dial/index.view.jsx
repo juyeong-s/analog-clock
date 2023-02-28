@@ -22,7 +22,6 @@ function DialView({
       {index.map((num, idx) => (
         <Index key={idx} num={num} />
       ))}
-
       <CenterCircle />
       <Hand type="hour" deg={hDeg} />
       <Hand type="minute" deg={mDeg} />

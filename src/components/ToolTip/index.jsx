@@ -15,7 +15,7 @@ const ToolTip = forwardRef((_, ref) => {
   const ampm = hour >= 12 ? "오후" : "오전";
 
   return (
-    <div className="tooltip" ref={ref}>
+    <div className="tool-tip" ref={ref}>
       <span>
         {ampm}
         &nbsp;
