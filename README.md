@@ -53,4 +53,22 @@ Dial 컴포넌트가 이벤트 발생마다 렌더링됨을 볼 수 있다.
 
 https://user-images.githubusercontent.com/63364990/221842752-8bab6355-5b56-43c1-b5f4-3e670324ed7c.mov
 
-Dial 컴포넌트가 이벤트와 상관없이 5초 동안 5번만 렌더링됨을 볼 수 있다.
+Dial 컴포넌트가 이벤트와 상관없이 4초 동안 4번만 렌더링됨을 볼 수 있다.
+
+## 비즈니스 로직과 마크업 로직의 관심사 분리를 위한 presentational & container 디자인 패턴 적용
+
+App, Dial 컴포넌트의 로직 부분이 약 20~30 line 정도된다. 여기에 마크업 로직까지 더해지면 복잡하기 떄문에 관심사 분리의 필요성을 느끼고 패턴을 적용시켰다. 또한, 각 부분에 변경사항이 생겼을 경우 커밋 기록으로 더 명확하게 확인할 수도 있다. ToolTip 컴포넌트의 경우 가져온 상태를 전처리해주는 로직뿐이므로 복잡하지 않아 따로 분리하지 않았다.
+
+비즈니스 로직이 담긴 부분은 `[파일명].business`로, 마크업 로직이 담긴 부분은 `[파일명].view`로 분리하였다.
+
+## reflow 방지를 위한 translate 사용
+
+기존에 마우스 움직임에 따른 ToolTip의 위치를 css left, top 속성으로 조정해주었다. 하지만 left, top을 조정할 경우 reflow와 repaint가 모두 발생하게 된다. 그래서 transform 속성의 translate를 활용하여 위치를 조절해주기로 했다. ToolTip의 offsetTop, offsetLeft 값을 가져와 마우스의 위치에 offset 값을 빼주어 계산해주었다.
+
+**left, top 조정**
+![스크린샷 2023-03-01 오전 1 58 26](https://user-images.githubusercontent.com/63364990/221926533-6212c75a-834c-442a-a46b-1a1c764f4150.png)
+
+**translate로 조정**
+![스크린샷 2023-03-01 오전 1 57 15](https://user-images.githubusercontent.com/63364990/221926551-5ade9355-a3e9-45d1-96f4-60bbea851c88.png)
+
+레이아웃과 페인트가 전체적으로 감소한 것을 알 수 있다.
