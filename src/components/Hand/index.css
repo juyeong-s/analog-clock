@@ -5,49 +5,40 @@
 }
 
 .hour {
-  width: 105px;
-  height: 105px;
-  transform: rotate(90deg);
+  height: 100px;
 }
 
-.hour::before {
+.hour::after {
   content: "";
-  position: absolute;
-  background-color: var(--primary-300);
   width: 0.25rem;
   height: 3rem;
-  border-radius: 0.75rem;
+  border-radius: 20px;
+  background-color: var(--primary-300);
   z-index: 1;
 }
 
 .minute {
-  width: 136px;
   height: 136px;
-  transform: rotate(180deg);
 }
 
-.minute::before {
+.minute::after {
   content: "";
-  position: absolute;
-  background-color: var(--primary-400);
   width: 0.25rem;
   height: 4rem;
-  border-radius: 0.75rem;
+  border-radius: 20px;
+  background-color: var(--primary-400);
   z-index: 2;
 }
 
 .second {
-  width: 130px;
-  height: 130px;
-  transform: rotate(-90deg);
+  height: 150px;
 }
 
-.second::before {
+.second::after {
   content: "";
-  position: absolute;
-  background-color: var(--gray-200);
   width: 0.125rem;
-  height: 5rem;
-  border-radius: 0.75rem;
+  height: 6rem;
+  border-radius: 20px;
+  background-color: var(--gray-200);
   z-index: 3;
 }
