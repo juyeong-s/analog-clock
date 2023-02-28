@@ -16,12 +16,13 @@ function App() {
   const handleMouseMoveOnClock = useCallback((e) => {
     const { clientX, clientY } = e;
 
-    requestAnimationFrame(() => {
-      if (tooptipRef.current) {
-        tooptipRef.current.style.left = `${clientX + 5}px`;
-        tooptipRef.current.style.top = `${clientY - 30}px`;
-      }
-    });
+    if (tooptipRef.current) {
+      const { offsetTop, offsetLeft } = tooptipRef.current;
+      const x = clientX + 5 - offsetLeft;
+      const y = clientY - 30 - offsetTop;
+
+      tooptipRef.current.style.transform = `translate(${x}px, ${y}px)`;
+    }
   }, []);
 
   return (
