@@ -1,12 +1,12 @@
-import { useAtom } from "jotai";
+import { useAtomValue } from "jotai";
 import { forwardRef } from "react";
 import { hourAtom, minuteAtom, secondAtom } from "../../state";
 import "./index.css";
 
 const ToolTip = forwardRef((_, ref) => {
-  const [hour] = useAtom(hourAtom);
-  const [minute] = useAtom(minuteAtom);
-  const [second] = useAtom(secondAtom);
+  const hour = useAtomValue(hourAtom);
+  const minute = useAtomValue(minuteAtom);
+  const second = useAtomValue(secondAtom);
 
   const text = `${String(hour).padStart(2, "0")}:${String(minute).padStart(
     2,

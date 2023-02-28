@@ -1,6 +1,6 @@
-import { useAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import { memo, useEffect } from "react";
-import { hourAtom, minuteAtom, secondAtom } from "../../state";
+import { dateAtom, hourAtom, minuteAtom, secondAtom } from "../../state";
 import DialView from "./index.view";
 
 function Dial({
@@ -10,25 +10,21 @@ function Dial({
 }) {
   const index = ["twelve", "three", "six", "nine"];
 
-  const [hour, setHour] = useAtom(hourAtom);
-  const [minute, setMinute] = useAtom(minuteAtom);
-  const [second, setSecond] = useAtom(secondAtom);
+  const hour = useAtomValue(hourAtom);
+  const minute = useAtomValue(minuteAtom);
+  const second = useAtomValue(secondAtom);
+
+  const setDate = useSetAtom(dateAtom);
 
   useEffect(() => {
     const clock = () => {
       const date = new Date();
-      const hour = date.getHours();
-      const minute = date.getMinutes();
-      const second = date.getSeconds();
-
-      setHour(() => hour);
-      setMinute(() => minute);
-      setSecond(() => second);
+      setDate(date);
     };
 
     const timer = setInterval(clock, 1000);
     return () => clearInterval(timer);
-  }, [setHour, setMinute, setSecond]);
+  }, [setDate]);
 
   const hDeg = hour * 30 + (minute * 6) / 12; // 30도씩 회전 -> 12시간*30 = 360
   const mDeg = minute * 6; // 6도씩 회전 -> 60분*6 = 360
