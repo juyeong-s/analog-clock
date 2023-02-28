@@ -16,16 +16,6 @@ function Dial({
 
   const setDate = useSetAtom(dateAtom);
 
-  useEffect(() => {
-    const clock = () => {
-      const date = new Date();
-      setDate(date);
-    };
-
-    const timer = setInterval(clock, 1000);
-    return () => clearInterval(timer);
-  }, [setDate]);
-
   const hDeg = hour * 30 + (minute * 6) / 12; // 30도씩 회전 -> 12시간*30 = 360
   const mDeg = minute * 6; // 6도씩 회전 -> 60분*6 = 360
   const sDeg = second * 6; // 6도씩 회전 -> 60초*6 = 360
@@ -39,6 +29,16 @@ function Dial({
     handleMouseMoveOnClock,
     handleMouseLeaveOnClock,
   };
+
+  useEffect(() => {
+    const clock = () => {
+      const date = new Date();
+      setDate(date);
+    };
+
+    const timer = setInterval(clock, 1000);
+    return () => clearInterval(timer);
+  }, [setDate]);
 
   return <DialView {...props} />;
 }
